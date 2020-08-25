@@ -6,6 +6,16 @@ Created on Sat Jan 12 16:57:30 2019
 @author: bmoseley
 """
 
+
+# This module defines the WaveNet (and inverse WaveNet) network, which is defined 
+# through a tensorflow graph stored in the SeismicWavenet class.
+# This class also defines the loss function, optimiser and training operations used by
+# main.py to train the network, as well as the summary statistics used for displaying the 
+# results in TensorBoard.
+# The SeismicWavenet class is selected in constants.py and its methods are called
+# inside the training loop of main.py. Its hyperparameters are provided by constants.py.
+
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np

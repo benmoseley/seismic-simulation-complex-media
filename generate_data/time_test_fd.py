@@ -6,6 +6,11 @@ Created on Sat May  4 13:38:15 2019
 @author: bmoseley
 """
 
+
+# This script measures the average time taken to generate 100 forward simulations using the
+# SEISMIC CPML library on a single CPU core.
+
+
 import sys
 import numpy as np
 import time

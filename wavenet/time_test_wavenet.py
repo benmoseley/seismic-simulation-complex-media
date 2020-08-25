@@ -6,6 +6,13 @@ Created on Fri Jun 21 13:36:52 2019
 @author: bmoseley
 """
 
+
+# This script measures the average time taken to generate 100 forward simulations using the
+# WaveNet network, either on a single CPU core or a single GPU. It also measures the
+# average time taken to generate 100 velocity predictions using the inverse WaveNet.
+
+
+
 # 3.7902 +/- 0.0347
 # 1.2691 +/- 0.0170
 

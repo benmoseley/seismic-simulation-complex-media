@@ -7,15 +7,19 @@ Created on Fri Feb 28 11:09:02 2020
 """
 
 
-# This code models a gather where the recievers are horizontally offset from the source, in a 2D V(z) acoustic model.
-# The model includes travel times and amplitudes with spherical spreading loss and zoepritz reflection/transmission coefficients
+# This module uses 2D ray tracing to model the receiver gather from a delta source function at the
+# surface of a 2D V(z) acoustic medium, where the receivers are horizontally offset from the source. 
+# Both travel times and seismic amplitudes with spherical spreading loss and Zoeppritz 
+# reflection/transmission coefficients are modelled.
+# This module is used when carrying out the 2D ray tracing benchmark.
 
-# TODO: use true phase from zoeppritz rather than simple polarity flip in model
 
 import numpy as np
 from shooting import shoot_rays
 from zoeppritz import zoeppritz_acoustic
 
+
+# TODO: use true phase from zoeppritz rather than simple polarity flip in model
 
 
 def model_gather(dz,v,rho,x_source,z_source,x_receivers,DELTAT,NSTEPS):

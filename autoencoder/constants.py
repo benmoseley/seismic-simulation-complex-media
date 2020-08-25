@@ -5,6 +5,16 @@ Created on Thu Apr  5 13:43:14 2018
 
 @author: bmoseley
 """
+
+
+# This module defines the Constants object, which defines all of the hyperparameters 
+# used when defining and training the conditional autoencoder network.
+# It also defines helper functions for easily saving the hyperparameter values 
+# for each training run. 
+# This class is used by main.py when training the autoencoder model, and is passed to
+# datasets.py and models.py too.
+
+
 import socket
 
 import torch.nn.functional as F

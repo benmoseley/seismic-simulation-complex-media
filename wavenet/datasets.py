@@ -6,6 +6,14 @@ Created on Sat Jan 12 16:57:30 2019
 @author: bmoseley
 """
 
+
+# This module defines a SeismicDataset class for easily loading the binary data
+# stored in ../generate_data/ as tensorflow tensors (via TensorFlow Datasets) suitable for training and testing
+# the WaveNet (and inverse WaveNet) network in main.py. This class can also be sliced to output normal numpy tensors too.
+# This class is used in main.py to load training and test data, and its hyperparameters are provided
+# by constants.py.
+
+
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt

@@ -6,6 +6,10 @@ Created on Wed Mar 27 18:40:57 2019
 @author: bmoseley
 """
 
+
+# This module defines the base class for the constants object defined in ../autoencoder/constants.py.
+
+
 import io_utils
 import pickle
 

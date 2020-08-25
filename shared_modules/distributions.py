@@ -6,9 +6,12 @@ Created on Tue Nov 13 17:04:43 2018
 @author: bmoseley
 """
 
-import numpy as np
 
-# HELPER FUNCTIONS
+# This module converts the moments of the lognormal distribution to the moments
+# of its corresponding normal distribution, and is called by ../generate_data/generate_velocity_models.py.
+
+
+import numpy as np
 
 lnLtoN = lambda mu_L, sigma_L: (np.log(mu_L/np.sqrt(1.+(sigma_L/mu_L)**2.)), np.sqrt(np.log(1.+(sigma_L/mu_L)**2.)))
 lognormal_pdf = lambda x, mu_N, sigma_N: (1./ (x * sigma_N * np.sqrt(2.*np.pi)))* (np.exp(-(np.log(x) - mu_N)**2. / (2. * sigma_N**2.)))

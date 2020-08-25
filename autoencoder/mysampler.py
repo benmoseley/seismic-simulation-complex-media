@@ -6,6 +6,11 @@ Created on Tue Jan  1 19:26:35 2019
 @author: bmoseley
 """
 
+
+# This module defines a custom pytorch batch sampler, which repeats the sampling of a
+# training dataset over multiple epochs. This sampler is used in main.py.
+
+
 from torch.utils.data import Sampler
 from torch._six import int_classes as _int_classes
 

@@ -7,6 +7,16 @@ Created on Thu Jan  3 22:00:57 2019
 """
 
 
+# This module defines the conditional autoencoder network, which is defined through a pytorch model,
+# wrapped by the AE_r class. 
+
+# This class is selected in constants.py and is called inside the training loop 
+# of main.py. Its hyperparameters are provided by constants.py.
+
+# This module also defines alternative network designs used for testing the sensitivity
+# of the accuracy of our approach to different network architectures.
+
+
 import torch
 import torch.nn as nn  
 import numpy as np

@@ -6,6 +6,13 @@ Created on Wed Dec 12 22:36:42 2018
 @author: bmoseley
 """
 
+
+# This script converts the faulted velocity models, their simulated receiver gathers 
+# and the source location for each gather into a flat, fixed record length binary file
+# for efficient data loading when training the conditional autoencoder network.
+# The output binary file is stored in data/.
+
+
 import os
 import sys
 import time

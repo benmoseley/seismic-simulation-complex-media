@@ -6,15 +6,15 @@ Created on Tue Nov 20 16:57:42 2018
 @author: bmoseley
 """
 
+
+# This module defines various loss functions in pytorch.
+
+
 import numpy as np
 import torch
 
-# DEFINES VARIOUS LOSS FUNCTIONS
 
-#
-# Trainer passes arguments in the following order: loss(*labels, *outputs, constants)
-
-# ! there is a bug in nn.MSEloss and nn.L1loss with reduction='elementwise_mean'
+# Note: trainer passes arguments in the following order: loss(*labels, *outputs, constants)
 
 def l2_mean_loss(a,b, c=None):
     return torch.mean((a-b)**2)

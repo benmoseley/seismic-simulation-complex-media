@@ -7,6 +7,9 @@ Created on Sat Jan 12 16:57:30 2019
 """
 
 
+# This module defines various generic helper functions in tensorflow.
+
+
 import tensorflow as tf
 
 def w(shape, stddev=0.01, mean=0.0, name=None):

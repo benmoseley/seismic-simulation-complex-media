@@ -6,6 +6,10 @@ Created on Sat Jan 12 16:57:30 2019
 @author: bmoseley
 """
 
+
+# This module defines various loss functions in tensorflow.
+
+
 import tensorflow as tf
 
 

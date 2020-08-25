@@ -6,6 +6,12 @@ Created on Tue Jun 11 15:40:02 2019
 @author: bmoseley
 """
 
+
+# This module defines helper functions for loading a trained WaveNet model and
+# for loading a test dataset for a trained model. It is called by the Jupyter 
+# notebooks used to generate the final report plots.
+
+
 import os
 import pickle
 import tensorflow as tf

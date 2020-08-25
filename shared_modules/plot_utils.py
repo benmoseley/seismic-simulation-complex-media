@@ -1,3 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 13 17:04:43 2018
+
+@author: bmoseley
+"""
+
+
+# This module defines various plotting helper variables and functions.
+
+
 from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 

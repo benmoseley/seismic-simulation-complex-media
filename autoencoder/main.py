@@ -7,6 +7,13 @@ Created on Tue Nov 13 17:04:43 2018
 """
 
 
+# This script trains a conditional autoencoder model, given a Constants object which contains
+# all of the training hyperparameters of the model.
+# It defines the loss function, optimiser and training operations used to train the network, 
+# as well as the summary statistics used for displaying the results in TensorBoard.
+# This script is the main entry point for training the conditional autoencoder network.
+
+
 import sys
 import os
 import time

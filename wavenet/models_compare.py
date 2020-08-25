@@ -6,6 +6,13 @@ Created on Wed Sep 11 17:34:51 2019
 @author: bmoseley
 """
 
+
+# This module defines alternative network designs used for testing the sensitivity
+# of the accuracy of our approach to different network architectures. We define a
+# standard CNN, with the option of adding dilations to its convolutional layers. This
+# model is selected in constants.py and is a child class of SeismicWavenet from models.py.
+
+
 import tensorflow as tf
 
 from tensorflow.python.util import deprecation

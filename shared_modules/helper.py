@@ -4,9 +4,11 @@
 Created on Wed May  9 10:54:31 2018
 
 @author: bmoseley
-
-helper python module to provide various helper functions
 """
+
+
+# This module defines various generic python helper functions.
+
 
 import copy as python_copy
 import subprocess

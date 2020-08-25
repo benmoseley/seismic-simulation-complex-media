@@ -1,8 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jan 12 16:57:30 2019
+
+@author: bmoseley
+"""
+
+
+# This module defines various I/O python helper functions.
+
+
 import os
 import shutil
 import glob
-
-## GENERAL DIRECTORY HELPER FUNCTIONS
 
 def get_dir(directory):
     """

@@ -7,6 +7,11 @@ Created on Sat Jan 12 16:57:30 2019
 """
 
 
+# This script trains a SeismicWaveNet model, given a Constants object which contains
+# all of the training hyperparameters of the model. It also sets up a summary writer
+# used for saving the training statistics for TensorBoard. This script is
+# the main entry point for training the WaveNet (and inverse WaveNet) networks.
+
 
 import sys
 import matplotlib

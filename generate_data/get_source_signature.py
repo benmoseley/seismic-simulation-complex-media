@@ -6,6 +6,13 @@ Created on Sat May  4 13:38:15 2019
 @author: bmoseley
 """
 
+
+# This script gets the source signature used when carrying out the 2D ray tracing
+# benchmark. The source signature is extracted by running SEISMIC CPML using a
+# constant velocity model of 1500 m/s and taking the simulated response at the 
+# source location.
+
+
 import shutil
 import sys
 import numpy as np

@@ -5,9 +5,13 @@ Created on Tue Nov  6 18:34:35 2018
 
 @author: bmoseley
 """
-import numpy as np
 
-## GENERATE VELOCITY TRACES
+
+# This module generates random 1D profiles of horizontally layered velocity models,
+# and is called by generate_velocity_models.py
+
+
+import numpy as np
 
 def generate_1D_random_velocity_trace(c):
     # Use probability distributions to create a 1D velocity trace

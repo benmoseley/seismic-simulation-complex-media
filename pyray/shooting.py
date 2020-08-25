@@ -7,8 +7,10 @@ Created on Wed Feb 26 17:26:15 2020
 """
 
 
-# This code solves for the p value which arrives a transmitted ray through a stratified 
-# V(z) model at a given offset
+# This module solves for the p value of a transmitted (non-reflected) ray through a stratified 2D V(z) model,
+# given the final offset of the transmitted ray, using a bisection algorithm.
+# This module is called by model_gather.py.
+
 
 import numpy as np
 

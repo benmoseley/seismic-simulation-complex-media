@@ -6,6 +6,11 @@ Created on Fri Jun 21 13:30:40 2019
 @author: bmoseley
 """
 
+
+# This script measures the average time taken to generate 100 forward simulations using the
+# conditional autoencoder network, either on a single CPU core or a single GPU.
+
+
 # 3.2761 +/- 0.0529
 
 # 0.1762 +/- 0.0026

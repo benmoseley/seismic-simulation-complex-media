@@ -6,6 +6,10 @@ Created on Fri Dec 14 20:39:53 2018
 @author: bmoseley
 """
 
+
+# This module defines various generic helper functions in pytorch.
+
+
 import torch
 import numpy as np
 

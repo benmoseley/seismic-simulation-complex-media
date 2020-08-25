@@ -6,6 +6,14 @@ Created on Sat Jan 12 16:57:30 2019
 @author: bmoseley
 """
 
+
+# This module defines two functions for converting between 1D profiles of horizontally layered
+# velocity models and their corresponding normal incidence reflectivity series. 
+# This module is called when preprocessing the input velocity models for the WaveNet network 
+# to their corresponding reflectivity series, and also when converting the inverse WaveNet 
+# network reflectivity series predictions to their corresponding velocity model predictions.
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 

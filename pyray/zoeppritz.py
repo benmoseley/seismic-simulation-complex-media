@@ -5,7 +5,12 @@ Created on Fri Feb 28 13:52:08 2020
 
 @author: bmoseley
 """
-	
+
+
+# This module calculates the Zoeppritz amplitude coefficients for a P-wave incident on an acoustic
+# interface, and is called by model_gather.py.
+
+
 import numpy as np
 
 def zoeppritz_acoustic(rho1,vp1,rho2,vp2,p):

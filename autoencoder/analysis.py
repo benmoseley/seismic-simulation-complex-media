@@ -6,6 +6,12 @@ Created on Mon Nov 19 18:27:51 2018
 @author: bmoseley
 """
 
+
+# This module defines helper functions for loading a trained conditional autoencoder model and
+# for loading a test dataset for a trained model. It is called by the Jupyter 
+# notebooks used to generate the final report plots.
+
+
 import os
 import pickle
 import torch

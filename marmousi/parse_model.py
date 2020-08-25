@@ -6,6 +6,12 @@ Created on Tue Mar  3 19:28:13 2020
 @author: bmoseley
 """
 
+
+# This script segments the marmousi model into many 128 x 128 chunks, used to
+# test the generalisation ability of the conditional autoencoder network.
+# The marmousi model is taken from here: https://wiki.seg.org/wiki/AGL_Elastic_Marmousi
+
+
 import numpy as np
 import obspy
 import matplotlib.pyplot as plt

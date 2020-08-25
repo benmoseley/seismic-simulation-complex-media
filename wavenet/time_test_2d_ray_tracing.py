@@ -6,6 +6,12 @@ Created on Fri Jun 21 13:36:52 2019
 @author: bmoseley
 """
 
+
+# This script measures the average time taken to generate 100 forward simulations using the
+# 2D ray tracing code in ../pyray/ on a single CPU core.
+
+
+
 # 2.2086 +/- 0.0851
 
 

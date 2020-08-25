@@ -6,6 +6,13 @@ Created on Tue Nov  6 18:28:31 2018
 @author: bmoseley
 """
 
+
+# This script generates random 2D velocity models to be used as training examples for both our networks.
+# It can either generate random horizontally layered velocity models (used for the WaveNet), or 
+# random horizontally layered velocity models with a random fault (used for the conditional autoencoder).
+# The velocity models are generated in parallel using python multiprocessing and are stored in velocity/.
+
+
 import sys
 import matplotlib
 if 'linux' in sys.platform.lower(): matplotlib.use('Agg')# use a non-interactive backend (ie plotting without windows)
