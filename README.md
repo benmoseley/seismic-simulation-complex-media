@@ -2,7 +2,7 @@
 
 ---
 
-This repository reproduces the results of the paper *[Deep learning for fast simulation of seismic waves in complex media](https://se.copernicus.org/articles/11/1527/2020/), B. Moseley, T. Nissen-Meyer and A. Markham, 2020 Solid Earth*
+This repository reproduces the results of the paper *[Deep learning for fast simulation of seismic waves in complex media](https://se.copernicus.org/articles/11/1527/2020/), B. Moseley, T. Nissen-Meyer and A. Markham, 2020 Solid Earth*.
 
 ---
 
