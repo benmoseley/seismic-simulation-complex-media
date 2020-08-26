@@ -1,0 +1,31 @@
+RUN: fault_cae3
+DATA: fault_2ms_r.bin
+DEVICE: 2
+MODEL: <class 'models.AE_r'>
+MODEL_LOAD_PATH: None
+DROPOUT_RATE: 0.0
+ACTIVATION: <function relu at 0x7f63661683b0>
+LOSS: <function l1_mean_loss_gain at 0x7f6365d81050>
+BATCH_SIZE: 100
+LRATE: 0.0001
+WEIGHT_DECAY: 0
+SEED: 123
+N_STEPS: 3000000
+N_CPU_WORKERS: 8
+DATASET: <class 'datasets.SeismicBinaryDBDataset'>
+N_EXAMPLES: 300000
+VELOCITY_SHAPE: (1, 128, 128)
+GATHER_SHAPE: (1, 32, 512)
+SOURCE_SHAPE: (2, 1, 1)
+T_GAIN: 2.5
+VELOCITY_MU: 2700.0
+VELOCITY_SIGMA: 560.0
+GATHER_MU: 0.0
+GATHER_SIGMA: 1.0
+SUMMARY_FREQ: 1000
+TEST_FREQ: 2000
+MODEL_SAVE_FREQ: 250000
+SUMMARY_OUT_DIR: results/summaries/fault_cae3/
+MODEL_OUT_DIR: results/models/fault_cae3/
+HOSTNAME: aimscdt2
+DATA_PATH: ../generate_data/data/fault_2ms_r.bin

@@ -1,0 +1,31 @@
+MODEL_RUN: new_inverse_final
+MODEL_LOAD_PATH: None
+DATA_PATH: /data/greyostrich/not-backed-up/aims/aims17/bmoseley/DPhil/Mini_Projects/DIP/forward_seisnets_paper/generate_data/data/layers_2ms.bin
+N_EXAMPLES: 50000
+VELOCITY_SHAPE: (114, 1)
+REFLECTIVITY_SHAPE: (512, 1)
+GATHER_SHAPE: (512, 11)
+GATHER_MU: 0.0
+GATHER_SIGMA: 1.0
+MODEL: <class 'models.SeismicWavenet'>
+INVERSE: True
+WAVE_HIDDEN_CHANNELS: 128
+NUM_WAVE_BLOCKS: 1
+WAVE_RATES: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+WAVE_BIASES: False
+WAVE_ACTIVATION: <function relu at 0x7f9d1ac29840>
+CONV_FILTER_LENGTH: 101
+BATCH_SIZE: 20
+LRATE: 1e-05
+T_GAIN: 2.5
+L_NUM: 2
+N_STEPS: 500000
+SEED: 123
+DEVICE: 6
+SUMMARY_FREQ: 1000
+TEST_FREQ: 2000
+MODEL_SAVE_FREQ: 50000
+PLOT_FREQ: 4000
+OUT_DIR: ./results/
+MODEL_OUT_DIR: ./results/models/new_inverse_final/
+SUMMARY_OUT_DIR: ./results/summaries/new_inverse_final/
