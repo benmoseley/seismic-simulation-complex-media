@@ -24,39 +24,41 @@ This repository reproduces the results of the paper *[Deep learning for fast sim
 
 ## Goal
 
-In this study our goal is to understand whether deep neural networks can simulate **acoustic seismic waves** in synthetic media.
+In this study our goal is to understand whether deep neural networks can simulate **seismic waves** in synthetic media.
 
-To answer this question, we consider simulating the seismic response of a single fixed point source propagating through a 2D velocity model at multiple receiver locations horizontally offset from the source, shown below:
+To help answer this question, we consider simulating the seismic response from a single fixed point source propagating through a **2D acoustic velocity model** at multiple receiver locations horizontally offset from the source, shown below:
 
 <img src="figures/f07.png" width="450">
 
-Our task is as follows:
+Our task is then as follows:
 
 > Given a randomly selected velocity model as input, can we train a neural network to simulate the pressure response recorded at each receiver location?
 
-We wish the network to **generalise** well to velocity models unseen during training.
+We wish the network to **generalise** well to velocity models unseen during training. In our paper we also discuss the **challenges** of extending this approach to **more complex, elastic and 3-D Earth models** required for practical simulation tasks.
 
 ## Workflow
 
 We design two neural networks to complete this task;
 
-- The first network simulates the seismic response in **horizontally layered media** and uses a **WaveNet** design. The input to the network is a velocity model converted to its corresponding reflectivity series and its output is a prediction of the seismic response at 11 fixed receiver locations. It is trained using many ground truth FD simulation examples.
+- The first network simulates the seismic response in **horizontally layered media** and uses a **WaveNet** design. The input to the network is a velocity model converted to its corresponding reflectivity series and its output is a prediction of the seismic response at 11 fixed receiver locations.
 
 <img src="figures/f02.png" width="500">
 
-- The second network simulates the seismic response in **faulted media** with arbitrary layers, fault properties and **an arbitrary location of the seismic source** on the surface of the media, and uses a **conditional autoencoder** design. The input to this network is the velocity model without any preprocessing applied and its output is a prediction of the seismic response at 32 fixed receiver locations. The input source location is concatenated to the network's latent vector, and is allowed to vary along the surface of the media.
+- The second network simulates the seismic response in **faulted media** with arbitrary layers, fault properties and **an arbitrary location of the seismic source** on the surface of the media, and uses a **conditional autoencoder** design. The input to this network is the velocity model without any preprocessing applied and its output is a prediction of the seismic response at 32 fixed receiver locations. The input source location is concatenated onto the network's latent vector, allowing the network to learn the effect of the source location.
 
 <img src="figures/f08.png" width="500">
 
+Both networks are trained using many ground truth FD simulation examples.
+
 ## Installation
 
-`seismic-simulation-complex-media` requires Python (for deep learning) and Fortran (for running FD simulation using the [SEISMIC CPML library](https://github.com/geodynamics/seismic_cpml) libraries to run.
+`seismic-simulation-complex-media` requires Python (for deep learning) and Fortran (for running FD simulation using the [SEISMIC CPML library](https://github.com/geodynamics/seismic_cpml)) libraries to run.
 
 We recommend setting up a new environment, for example:
 
 ```bash
-conda create -n seismicsim python=3.6  # Use Anaconda package manager
-conda activate seismicsim
+conda create -n seismic_sim python=3.6  # Use Anaconda package manager
+conda activate seismic_sim
 ```
 and then installing the following Python dependencies:
 ```bash
@@ -74,14 +76,14 @@ Next, download the source code:
 git clone https://github.com/benmoseley/seismic-simulation-complex-media.git
 ```
 
-Finally, compile the SEISMIC CPML Fortran code using:
+Finally, compile the SEISMIC CPML Fortran library using:
 
 ```bash
 cd seismic-simulation-complex-media/generate_data/
 make all
 ```
 
-This should create an executable file called "xmodified_seismic_CPML_2D_pressure_second_order".
+This should create an executable file called `xmodified_seismic_CPML_2D_pressure_second_order` in `generate_data`.
 
 ## Reproducing our results
 
@@ -101,12 +103,12 @@ To reproduce our workflow, run the following scripts in this order:
 3. `generate_data/preprocess_wavenet.py` : preprocesses velocity models used for training the WaveNet into their corresponding reflectivity series.
 4. `generate_data/convert_to_flat_binary_wavenet.py` : converts the velocity models and FD simulations used for training the WaveNet into a flat binary file for efficient training.
 5. `generate_data/convert_to_flat_binary_autoencoder.py` : converts the velocity models and FD simulations used for training the conditional autoencoder into a flat binary file for efficient training.
-6. `wavenet/main.py` : trains the WaveNet (and inverse WaveNet) networks.
-7. `autoencoder/main.py` : trains the conditional autoencoder networks.
-8. Finally, all of the folders contain Jupyter Notebooks which will reproduce the results plots in the Solid Earth paper.
+6. `wavenet/main.py` : trains the WaveNet (and inverse WaveNet) networks, outputting training summaries to TensorBoard.
+7. `autoencoder/main.py` : trains the conditional autoencoder networks, outputting training summaries to TensorBoard.
+8. Finally, all of the folders contain Jupyter Notebooks which carry out analysis of our results and will reproduce the results plots in the Solid Earth paper.
 
-Steps 1-5 need to be re-run for each type of train and test dataset used in the paper. See the scripts saved in the subfolders `generate_data/velocity` and `generate_data/gather` for the configurations we used for each type of dataset. For steps 6-7, the `constants.py` file in `wavenet` and `autoencoder` can be used to set different network hyperparameters, see the saved files in `wavenet/server` and `autoencoder/server` for the configurations we used in the paper.
+Steps 1-5 need to be re-run for each type of train and test dataset used in the paper. See the scripts saved in the subfolders `generate_data/velocity` and `generate_data/gather` for the configurations we used for each type of dataset, and the paper for a description of each dataset. For steps 6-7, the `constants.py` file in `wavenet` and `autoencoder` can be used to set different network hyperparameters, see the saved files in `wavenet/server` and `autoencoder/server` for the configurations we used in the paper.
 
-
+For further questions please contact us.
 
 
