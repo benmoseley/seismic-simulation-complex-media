@@ -34,7 +34,7 @@ Our task is then as follows:
 
 > Given a randomly selected velocity model as input, can we train a neural network to simulate the pressure response recorded at each receiver location?
 
-We wish the network to **generalise** well to velocity models unseen during training. In our paper we also discuss the **challenges** of extending this approach to **more complex, elastic and 3-D Earth models** required for practical simulation tasks.
+We wish the network to **generalise** well to velocity models unseen during training. In the paper we also discuss the **challenges** of extending this approach to **more complex, elastic and 3-D Earth models** required for practical simulation tasks.
 
 ## Workflow
 
