@@ -105,7 +105,7 @@ To reproduce our workflow, run the following scripts in this order:
 5. `generate_data/convert_to_flat_binary_autoencoder.py` : converts the velocity models and FD simulations used for training the conditional autoencoder into a flat binary file for efficient training.
 6. `wavenet/main.py` : trains the WaveNet (and inverse WaveNet) networks, outputting training summaries to TensorBoard.
 7. `autoencoder/main.py` : trains the conditional autoencoder networks, outputting training summaries to TensorBoard.
-8. Finally, all of the folders contain Jupyter Notebooks which carry out analysis of our results and will reproduce the results plots in the Solid Earth paper.
+8. Finally, `generate_data`, `marmousi`, `wavenet` and `autoencoder` contain Jupyter Notebooks which carry out analysis of our results and will reproduce the results plots in the Solid Earth paper.
 
 Steps 1-5 need to be re-run for each type of train and test dataset used in the paper. See the scripts saved in the subfolders `generate_data/velocity` and `generate_data/gather` for the configurations we used for each type of dataset, and the paper for a description of each dataset. For steps 6-7, the `constants.py` file in `wavenet` and `autoencoder` can be used to set different network hyperparameters, see the saved files in `wavenet/server` and `autoencoder/server` for the configurations we used in the paper.
 
